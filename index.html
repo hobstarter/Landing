@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-image: url('Liminal Spaces (@Liminal_Places) on X.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .info-panel {
+            background-color: #F4D03F;
+            width: 400px;
+            padding: 30px;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #2C3E50;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .panel-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #2C3E50;
+            letter-spacing: -2px;
+        }
+
+        .entry {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .entry:last-of-type {
+            border-bottom: none;
+            margin-bottom: 40px;
+        }
+
+        .date {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .description {
+            margin-bottom: 3px;
+        }
+
+        .location {
+            font-style: italic;
+        }
+
+        .reference {
+            float: right;
+            font-weight: bold;
+            text-decoration: none;
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .reference:hover {
+            color: #E74C3C;
+            text-decoration: underline;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #2C3E50;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 1px solid #2C3E50;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #2C3E50;
+            color: #F4D03F;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #F4D03F;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .control-btn {
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 5px 0;
+            background-color: #2C3E50;
+            color: #F4D03F;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background-color: #34495E;
+            transform: scale(1.1);
+        }
+
+        /* Editable content styling */
+        [contenteditable="true"] {
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        [contenteditable="true"]:focus {
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .info-panel {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .panel-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-panel">
+            <h1 class="panel-title" contenteditable="true">Untitled-1</h1>
+            
+            <div class="entry">
+                <div class="date" contenteditable="true">Mar. 15, 2026</div>
+                <div class="description" contenteditable="true">Lorem ipsum dolor sit, Amet Consectetur</div>
+                <div class="location" contenteditable="true">Elusimod Tempor, 2025</div>
+                <a href="#lorem01" class="reference" contenteditable="true">Lorem 01</a>
+            </div>
+
+            <div class="entry">
+                <div class="date" contenteditable="true">Mar. 22, 2026</div>
+                <div class="description" contenteditable="true">Nullam Varius, Turpis ET</div>
+                <div class="location" contenteditable="true">Scelerisque, 2025</div>
+                <a href="#lorem02" class="reference" contenteditable="true">Lorem 02</a>
+            </div>
+
+            <div class="entry">
+                <div class="date" contenteditable="true">Mar. 23, 2026</div>
+                <div class="description" contenteditable="true">Fusce ID Dui, Sit</div>
+                <div class="location" contenteditable="true">Tellus, 2025</div>
+                <a href="#lorem03" class="reference" contenteditable="true">Lorem 03</a>
+            </div>
+
+            <div class="entry">
+                <div class="date" contenteditable="true">Aug. 3, 2026</div>
+                <div class="description" contenteditable="true">Tristique Neque Consequat, ES</div>
+                <div class="location" contenteditable="true">Sapien Varius Nunc, 2025</div>
+                <a href="#lorem04" class="reference" contenteditable="true">Lorem 04</a>
+            </div>
+
+            <div class="bottom-nav">
+                <a href="#shop" class="nav-link" contenteditable="true">Shop</a>
+                <a href="#ig" class="nav-link" contenteditable="true">IG</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn" onclick="toggleEdit()" title="Toggle Edit Mode">✎</button>
+        <button class="control-btn" onclick="saveContent()" title="Save Changes">💾</button>
+        <button class="control-btn" onclick="resetContent()" title="Reset Content">↻</button>
+    </div>
+
+    <script>
+        let editMode = true;
+
+        function toggleEdit() {
+            const editables = document.querySelectorAll('[contenteditable]');
+            editMode = !editMode;
+            
+            editables.forEach(element => {
+                element.contentEditable = editMode;
+                element.style.cursor = editMode ? 'text' : 'default';
+            });
+
+            const btn = document.querySelector('.control-btn');
+            btn.innerHTML = editMode ? '✎' : '🔒';
+            btn.title = editMode ? 'Lock Editing' : 'Enable Editing';
+        }
+
+        function saveContent() {
+            // In a real application, you would send this data to a server
+            const content = {
+                title: document.querySelector('.panel-title').textContent,
+                entries: Array.from(document.querySelectorAll('.entry')).map(entry => ({
+                    date: entry.querySelector('.date').textContent,
+                    description: entry.querySelector('.description').textContent,
+                    location: entry.querySelector('.location').textContent,
+                    reference: entry.querySelector('.reference').textContent
+                })),
+                nav: {
+                    shop: document.querySelector('.nav-link:first-child').textContent,
+                    ig: document.querySelector('.nav-link:last-child').textContent
+                }
+            };
+            
+            localStorage.setItem('siteContent', JSON.stringify(content));
+            alert('Content saved locally!');
+        }
+
+        function resetContent() {
+            if (confirm('Reset all content to default?')) {
+                location.reload();
+            }
+        }
+
+        // Load saved content on page load
+        window.addEventListener('load', function() {
+            const saved = localStorage.getItem('siteContent');
+            if (saved) {
+                const content = JSON.parse(saved);
+                document.querySelector('.panel-title').textContent = content.title;
+                
+                const entries = document.querySelectorAll('.entry');
+                content.entries.forEach((entry, index) => {
+                    if (entries[index]) {
+                        entries[index].querySelector('.date').textContent = entry.date;
+                        entries[index].querySelector('.description').textContent = entry.description;
+                        entries[index].querySelector('.location').textContent = entry.location;
+                        entries[index].querySelector('.reference').textContent = entry.reference;
+                    }
+                });
+
+                document.querySelector('.nav-link:first-child').textContent = content.nav.shop;
+                document.querySelector('.nav-link:last-child').textContent = content.nav.ig;
+            }
+        });
+
+        // Make links work properly even when editable
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('reference') || e.target.classList.contains('nav-link')) {
+                if (!editMode) {
+                    // Only follow link if not in edit mode
+                    window.open(e.target.href, '_blank');
+                }
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
