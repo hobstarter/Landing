@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Club</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .landing-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Replace 'your-background-image.jpg' with your actual image filename */
+            background: url('your-background-image.jpg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-link {
+            position: absolute;
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+            text-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+            color: #ffeb3b;
+        }
+
+        .hiking-club {
+            top: 8%;
+            left: 5%;
+        }
+
+        .schedule {
+            top: 8%;
+            right: 5%;
+        }
+
+        .contact {
+            bottom: 8%;
+            left: 5%;
+        }
+
+        .center-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .center-logo:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+        }
+
+        .logo-svg {
+            width: 200px;
+            height: 200px;
+        }
+
+        .boot-flower {
+            fill: white;
+            stroke: #333;
+            stroke-width: 2;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                font-size: 2.5rem;
+            }
+            
+            .hiking-club {
+                top: 5%;
+                left: 3%;
+            }
+            
+            .schedule {
+                top: 5%;
+                right: 3%;
+            }
+            
+            .contact {
+                bottom: 5%;
+                left: 3%;
+            }
+            
+            .logo-svg {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 1.8rem;
+            }
+            
+            .logo-svg {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Navigation Links -->
+        <a href="hiking-club.html" class="nav-link hiking-club">HIKING CLUB</a>
+        <a href="schedule.html" class="nav-link schedule">SCHEDULE</a>
+        <a href="contact.html" class="nav-link contact">CONTACT</a>
+        
+        <!-- Center Logo -->
+        <a href="about.html" class="center-logo">
+            <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Hiking Boot -->
+                <path d="M50 140 Q45 130 50 120 L70 115 Q80 110 90 115 L120 120 Q130 125 135 135 L140 145 Q145 155 140 165 L130 170 Q120 175 110 170 L80 165 Q70 160 65 150 L50 140 Z" 
+                      class="boot-flower"/>
+                
+                <!-- Boot Sole -->
+                <ellipse cx="95" cy="175" rx="45" ry="8" class="boot-flower"/>
+                
+                <!-- Boot Laces -->
+                <line x1="70" y1="130" x2="85" y2="125" stroke="white" stroke-width="2"/>
+                <line x1="85" y1="125" x2="70" y2="120" stroke="white" stroke-width="2"/>
+                <line x1="85" y1="135" x2="100" y2="130" stroke="white" stroke-width="2"/>
+                <line x1="100" y1="130" x2="85" y2="125" stroke="white" stroke-width="2"/>
+                <line x1="100" y1="140" x2="115" y2="135" stroke="white" stroke-width="2"/>
+                <line x1="115" y1="135" x2="100" y2="130" stroke="white" stroke-width="2"/>
+                
+                <!-- Flower Stem -->
+                <line x1="100" y1="115" x2="100" y2="60" stroke="white" stroke-width="4"/>
+                
+                <!-- Flower Petals -->
+                <g transform="translate(100,50)">
+                    <!-- Center -->
+                    <circle cx="0" cy="0" r="8" class="boot-flower"/>
+                    
+                    <!-- Petals -->
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(0)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(45)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(90)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(135)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(180)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(225)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(270)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(315)"/>
+                    
+                    <!-- Flower center dots -->
+                    <circle cx="-2" cy="-2" r="1.5" fill="#333"/>
+                    <circle cx="2" cy="-2" r="1.5" fill="#333"/>
+                    <circle cx="0" cy="2" r="1.5" fill="#333"/>
+                    <circle cx="-3" cy="1" r="1" fill="#333"/>
+                    <circle cx="3" cy="1" r="1" fill="#333"/>
+                    <circle cx="0" cy="-4" r="1" fill="#333"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.animation = 'pulse 0.6s ease-in-out';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.animation = '';
+            });
+        });
+
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1.1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add click effects
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.href.includes('.html')) {
+                    e.preventDefault();
+                    alert('This would navigate to: ' + this.href);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
