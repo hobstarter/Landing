@@ -22,7 +22,7 @@
             width: 100%;
             height: 100vh;
             /* Replace 'your-background-image.jpg' with your actual image filename */
-            background: url('your-background-image.jpg') center/cover no-repeat;
+            background: url('center-image.png') center/cover no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -75,16 +75,13 @@
             filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
         }
 
-        .logo-svg {
+        .logo-image {
             width: 200px;
             height: 200px;
-        }
-
-        .boot-flower {
-            fill: white;
-            stroke: #333;
-            stroke-width: 2;
-            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
 
         @media (max-width: 768px) {
@@ -107,7 +104,7 @@
                 left: 3%;
             }
             
-            .logo-svg {
+            .logo-image {
                 width: 150px;
                 height: 150px;
             }
@@ -118,7 +115,7 @@
                 font-size: 1.8rem;
             }
             
-            .logo-svg {
+            .logo-image {
                 width: 120px;
                 height: 120px;
             }
@@ -134,49 +131,8 @@
         
         <!-- Center Logo -->
         <a href="about.html" class="center-logo">
-            <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <!-- Hiking Boot -->
-                <path d="M50 140 Q45 130 50 120 L70 115 Q80 110 90 115 L120 120 Q130 125 135 135 L140 145 Q145 155 140 165 L130 170 Q120 175 110 170 L80 165 Q70 160 65 150 L50 140 Z" 
-                      class="boot-flower"/>
-                
-                <!-- Boot Sole -->
-                <ellipse cx="95" cy="175" rx="45" ry="8" class="boot-flower"/>
-                
-                <!-- Boot Laces -->
-                <line x1="70" y1="130" x2="85" y2="125" stroke="white" stroke-width="2"/>
-                <line x1="85" y1="125" x2="70" y2="120" stroke="white" stroke-width="2"/>
-                <line x1="85" y1="135" x2="100" y2="130" stroke="white" stroke-width="2"/>
-                <line x1="100" y1="130" x2="85" y2="125" stroke="white" stroke-width="2"/>
-                <line x1="100" y1="140" x2="115" y2="135" stroke="white" stroke-width="2"/>
-                <line x1="115" y1="135" x2="100" y2="130" stroke="white" stroke-width="2"/>
-                
-                <!-- Flower Stem -->
-                <line x1="100" y1="115" x2="100" y2="60" stroke="white" stroke-width="4"/>
-                
-                <!-- Flower Petals -->
-                <g transform="translate(100,50)">
-                    <!-- Center -->
-                    <circle cx="0" cy="0" r="8" class="boot-flower"/>
-                    
-                    <!-- Petals -->
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(0)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(45)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(90)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(135)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(180)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(225)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(270)"/>
-                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(315)"/>
-                    
-                    <!-- Flower center dots -->
-                    <circle cx="-2" cy="-2" r="1.5" fill="#333"/>
-                    <circle cx="2" cy="-2" r="1.5" fill="#333"/>
-                    <circle cx="0" cy="2" r="1.5" fill="#333"/>
-                    <circle cx="-3" cy="1" r="1" fill="#333"/>
-                    <circle cx="3" cy="1" r="1" fill="#333"/>
-                    <circle cx="0" cy="-4" r="1" fill="#333"/>
-                </g>
-            </svg>
+            <!-- Replace 'your-logo-image.jpg' with your actual image filename -->
+            <img src="your-logo-image.jpg" alt="Hiking Club Logo" class="logo-image">
         </a>
     </div>
 
