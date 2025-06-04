@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Studio Inc. - Proposal</title>
+    <title>Hiking Club</title>
     <style>
         * {
             margin: 0;
@@ -11,424 +11,205 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
 
-        .document {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            min-height: 100vh;
-        }
-
-        /* Header */
-        .header {
+        .landing-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Replace 'your-background-image.jpg' with your actual image filename */
+            background: url('your-background-image.jpg') center/cover no-repeat;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 30px 40px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .company-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .proposal-info {
-            text-align: right;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .proposal-links {
-            margin-bottom: 5px;
-        }
-
-        .proposal-links a {
-            color: #0066cc;
-            text-decoration: underline;
-            margin: 0 2px;
-        }
-
-        .date {
-            color: #333;
-            font-weight: 500;
-        }
-
-        /* Main Content */
-        .content {
-            padding: 40px;
-        }
-
-        .proposal-section {
-            margin-bottom: 60px;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .section-description {
-            max-width: 400px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        /* Icon Grid */
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .icon-item {
-            display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            text-align: center;
         }
 
-        .icon-circle {
+        .nav-link {
+            position: absolute;
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+            text-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+            color: #ffeb3b;
+        }
+
+        .hiking-club {
+            top: 8%;
+            left: 5%;
+        }
+
+        .schedule {
+            top: 8%;
+            right: 5%;
+        }
+
+        .contact {
+            bottom: 8%;
+            left: 5%;
+        }
+
+        .center-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .center-logo:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+        }
+
+        .logo-svg {
             width: 200px;
             height: 200px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            position: relative;
         }
 
-        .icon-circle.orange {
-            background-color: #ff6b35;
-        }
-
-        .icon-circle.black {
-            background-color: #000;
-        }
-
-        .icon-circle.blue {
-            background-color: #4285f4;
-        }
-
-        .icon-circle.white {
-            background-color: #fff;
-            border: 2px solid #ddd;
-        }
-
-        /* Icon SVGs */
-        .care-icon {
-            width: 80px;
-            height: 80px;
+        .boot-flower {
             fill: white;
-        }
-
-        .recycle-icon {
-            width: 100px;
-            height: 100px;
-            fill: white;
-        }
-
-        .plant-icon {
-            width: 80px;
-            height: 80px;
-            fill: white;
-        }
-
-        .character-icon {
-            width: 120px;
-            height: 120px;
-            fill: #333;
-        }
-
-        .icon-label {
-            font-size: 14px;
-            color: #666;
-            border: 1px solid #ddd;
-            padding: 8px 16px;
-            background: white;
-        }
-
-        /* Bottom Grid */
-        .bottom-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 80px;
-        }
-
-        .grid-item {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .grid-item.blue-outline {
-            border: 4px solid #4285f4;
-            color: #4285f4;
-            background: white;
-        }
-
-        .grid-item.orange-text {
-            color: #ff6b35;
-            background: white;
-            border: 2px solid #ff6b35;
-        }
-
-        /* Footer */
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 40px;
-            border-top: 1px solid #eee;
-            background: #f8f8f8;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .footer a {
-            color: #0066cc;
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .icon-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            .icon-circle {
-                width: 160px;
-                height: 160px;
-            }
+            stroke: #333;
+            stroke-width: 2;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
         }
 
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 20px;
+            .nav-link {
+                font-size: 2.5rem;
             }
             
-            .proposal-info {
-                text-align: left;
+            .hiking-club {
+                top: 5%;
+                left: 3%;
             }
             
-            .content {
-                padding: 20px;
+            .schedule {
+                top: 5%;
+                right: 3%;
             }
             
-            .icon-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .contact {
+                bottom: 5%;
+                left: 3%;
             }
             
-            .icon-circle {
+            .logo-svg {
                 width: 150px;
                 height: 150px;
             }
-            
-            .bottom-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 1.8rem;
+            }
+            
+            .logo-svg {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="document">
-        <!-- Header -->
-        <div class="header">
-            <div class="company-name">Test Studio Inc.</div>
-            <div class="proposal-info">
-                <div class="proposal-links">
-                    Proposal: <a href="#">A</a>, <a href="#">B</a>, <a href="#">C</a>
-                </div>
-                <div class="date">22.04.27</div>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="content">
-            <div class="proposal-section">
-                <div class="section-header">
-                    <div class="section-title">Proposal A</div>
-                    <div class="section-description">
-                        Curabitur vitae odio pretium, volutpat augue efficitur, ullamcorper ante. Nunc ultrices eget urna in aliquet. Nulla at ullamcorper leo. Aliquam egestas non lacus sed tempor. Ut bibendum mauris sit amet augue mollis, et tincidunt nisl gravida. Proin dictum dapibus libero vitae luctus. Morbi gravida dolor sit amet erat sagittis, suscipit blandit nibh ullamcorper.
-                    </div>
-                </div>
-
-                <!-- Icon Grid -->
-                <div class="icon-grid">
-                    <div class="icon-item">
-                        <div class="icon-circle orange">
-                            <svg class="care-icon" viewBox="0 0 100 100">
-                                <path d="M50 20c-8 0-15 7-15 15 0 12 15 25 15 25s15-13 15-25c0-8-7-15-15-15z"/>
-                                <circle cx="50" cy="35" r="5"/>
-                                <path d="M20 60c0-5 4-9 9-9h42c5 0 9 4 9 9v15c0 5-4 9-9 9H29c-5 0-9-4-9-9V60z"/>
-                                <path d="M15 45c-2 0-4 2-4 4v6c0 2 2 4 4 4h5V45h-5zM80 45v14h5c2 0 4-2 4-4v-6c0-2-2-4-4-4h-5z"/>
-                            </svg>
-                        </div>
-                        <div class="icon-label">A1 — 1:1</div>
-                    </div>
-
-                    <div class="icon-item">
-                        <div class="icon-circle black">
-                            <svg class="recycle-icon" viewBox="0 0 100 100">
-                                <path d="M50 10L35 35h10v15h10V35h10L50 10z"/>
-                                <path d="M20 50l15-25v10h15v10H35v10L20 50z"/>
-                                <path d="M80 50L65 75V65H50V55h15V45l15 25z"/>
-                                <circle cx="50" cy="50" r="25" fill="none" stroke="white" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="icon-label">A2 — 1:1</div>
-                    </div>
-
-                    <div class="icon-item">
-                        <div class="icon-circle blue">
-                            <svg class="plant-icon" viewBox="0 0 100 100">
-                                <rect x="30" y="70" width="40" height="20" rx="5"/>
-                                <rect x="45" y="40" width="10" height="35"/>
-                                <ellipse cx="50" cy="35" rx="15" ry="8"/>
-                                <path d="M35 35c0-8 7-15 15-15s15 7 15 15"/>
-                                <circle cx="50" cy="25" r="8"/>
-                                <ellipse cx="40" cy="30" rx="8" ry="5"/>
-                                <ellipse cx="60" cy="30" rx="8" ry="5"/>
-                            </svg>
-                        </div>
-                        <div class="icon-label">A3 — 1:1</div>
-                    </div>
-
-                    <div class="icon-item">
-                        <div class="icon-circle white">
-                            <svg class="character-icon" viewBox="0 0 120 120">
-                                <circle cx="30" cy="25" r="8"/>
-                                <circle cx="90" cy="25" r="8"/>
-                                <circle cx="60" cy="45" r="3"/>
-                                <path d="M20 60c0-20 20-35 40-35s40 15 40 35c0 25-18 45-40 45s-40-20-40-45z" fill="none" stroke="#333" stroke-width="2"/>
-                                <path d="M35 80c8 8 17 8 25 0c8 8 17 8 25 0" fill="none" stroke="#333" stroke-width="2"/>
-                                <circle cx="25" cy="70" r="2"/>
-                                <circle cx="35" cy="75" r="2"/>
-                                <circle cx="45" cy="80" r="2"/>
-                                <circle cx="55" cy="82" r="2"/>
-                                <circle cx="65" cy="80" r="2"/>
-                                <circle cx="75" cy="75" r="2"/>
-                                <circle cx="85" cy="70" r="2"/>
-                                <circle cx="95" cy="65" r="2"/>
-                                <circle cx="90" cy="55" r="2"/>
-                                <circle cx="85" cy="45" r="2"/>
-                                <circle cx="75" cy="35" r="2"/>
-                                <circle cx="70" cy="30" r="2"/>
-                            </svg>
-                        </div>
-                        <div class="icon-label">A4 — 1:1</div>
-                    </div>
-                </div>
-
-                <!-- Bottom Grid -->
-                <div class="bottom-grid">
-                    <div class="grid-item blue-outline">
-                        <div style="display: flex; align-items: center; gap: 20px;">
-                            <div style="width: 40px; height: 40px; background: #4285f4; border-radius: 50%;"></div>
-                            <div style="width: 2px; height: 60px; background: #4285f4;"></div>
-                            <div style="width: 40px; height: 40px; background: #4285f4; border-radius: 50%;"></div>
-                            <div style="width: 2px; height: 60px; background: #4285f4;"></div>
-                            <div style="width: 40px; height: 40px; background: #4285f4; border-radius: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="grid-item orange-text">
-                        takara
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <div><a href="mailto:email@example.com">Email</a></div>
-            <div>Cargo Demo Site</div>
-            <div>No. 21093</div>
-        </div>
+    <div class="landing-container">
+        <!-- Navigation Links -->
+        <a href="hiking-club.html" class="nav-link hiking-club">HIKING CLUB</a>
+        <a href="schedule.html" class="nav-link schedule">SCHEDULE</a>
+        <a href="contact.html" class="nav-link contact">CONTACT</a>
+        
+        <!-- Center Logo -->
+        <a href="about.html" class="center-logo">
+            <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Hiking Boot -->
+                <path d="M50 140 Q45 130 50 120 L70 115 Q80 110 90 115 L120 120 Q130 125 135 135 L140 145 Q145 155 140 165 L130 170 Q120 175 110 170 L80 165 Q70 160 65 150 L50 140 Z" 
+                      class="boot-flower"/>
+                
+                <!-- Boot Sole -->
+                <ellipse cx="95" cy="175" rx="45" ry="8" class="boot-flower"/>
+                
+                <!-- Boot Laces -->
+                <line x1="70" y1="130" x2="85" y2="125" stroke="white" stroke-width="2"/>
+                <line x1="85" y1="125" x2="70" y2="120" stroke="white" stroke-width="2"/>
+                <line x1="85" y1="135" x2="100" y2="130" stroke="white" stroke-width="2"/>
+                <line x1="100" y1="130" x2="85" y2="125" stroke="white" stroke-width="2"/>
+                <line x1="100" y1="140" x2="115" y2="135" stroke="white" stroke-width="2"/>
+                <line x1="115" y1="135" x2="100" y2="130" stroke="white" stroke-width="2"/>
+                
+                <!-- Flower Stem -->
+                <line x1="100" y1="115" x2="100" y2="60" stroke="white" stroke-width="4"/>
+                
+                <!-- Flower Petals -->
+                <g transform="translate(100,50)">
+                    <!-- Center -->
+                    <circle cx="0" cy="0" r="8" class="boot-flower"/>
+                    
+                    <!-- Petals -->
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(0)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(45)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(90)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(135)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(180)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(225)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(270)"/>
+                    <ellipse cx="0" cy="-18" rx="6" ry="12" class="boot-flower" transform="rotate(315)"/>
+                    
+                    <!-- Flower center dots -->
+                    <circle cx="-2" cy="-2" r="1.5" fill="#333"/>
+                    <circle cx="2" cy="-2" r="1.5" fill="#333"/>
+                    <circle cx="0" cy="2" r="1.5" fill="#333"/>
+                    <circle cx="-3" cy="1" r="1" fill="#333"/>
+                    <circle cx="3" cy="1" r="1" fill="#333"/>
+                    <circle cx="0" cy="-4" r="1" fill="#333"/>
+                </g>
+            </svg>
+        </a>
     </div>
 
     <script>
-        // Add smooth scrolling behavior
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click handlers for proposal links
-            document.querySelectorAll('.proposal-links a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Proposal clicked:', this.textContent);
-                    // Here you could implement switching between different proposals
-                });
+        // Add some interactive effects
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.animation = 'pulse 0.6s ease-in-out';
             });
-
-            // Add hover effects to icons
-            document.querySelectorAll('.icon-circle').forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                    this.style.transition = 'transform 0.3s ease';
-                });
-                
-                icon.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-
-            // Add click handlers to grid items
-            document.querySelectorAll('.grid-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    console.log('Grid item clicked:', this.textContent.trim());
-                });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.animation = '';
             });
         });
 
-        // Add some scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1.1); }
+            }
+        `;
+        document.head.appendChild(style);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+        // Add click effects
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.href.includes('.html')) {
+                    e.preventDefault();
+                    alert('This would navigate to: ' + this.href);
                 }
-            });
-        }, observerOptions);
-
-        // Observe icon items for animations
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.icon-item').forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                observer.observe(item);
             });
         });
     </script>
