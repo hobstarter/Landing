@@ -118,6 +118,66 @@
                 height: 120px;
             }
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 50% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(-50%);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-60%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        .modal-text {
+            font-size: 1.3rem;
+            color: #ed7c02;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            background-color: #ed7c02;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #ff7d26;
+        }
     </style>
 </head>
 <body>
@@ -132,6 +192,14 @@
             <!-- Replace 'your-logo-image.jpg' with your actual image filename -->
             <img src="center-image.png" alt="Hiking Club Logo" class="logo-image">
         </a>
+    </div>
+
+    <!-- Modal -->
+    <div id="constructionModal" class="modal">
+        <div class="modal-content">
+            <p class="modal-text">This path is under construction as Jamie is still procrastinating</p>
+            <button class="close-btn" onclick="closeModal()">Got it!</button>
+        </div>
     </div>
 
     <script>
@@ -160,12 +228,27 @@
         // Add click effects
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
-                if (!this.href.includes('.html')) {
-                    e.preventDefault();
-                    alert('This would navigate to: ' + this.href);
-                }
+                e.preventDefault();
+                showModal();
             });
         });
+
+        // Modal functions
+        function showModal() {
+            document.getElementById('constructionModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('constructionModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('constructionModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
